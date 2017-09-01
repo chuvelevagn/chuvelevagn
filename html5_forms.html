@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="HTML5 уроки" />
+    <meta name="author" content="Чувелёва Галина Николаевна" />
+    <title>HTML 5: Формы</title>
+
+    <!-- CSS стили -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Иконка сайта -->
+    <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Изображения</h1>
+        <p class="lead">В этом уроке рассмотрим пример работы с изображениями, используя возможности <b>HTML 5</b>.</p>
+
+        <p>
+            Одной из странных особенностей <b>HTML</b>-форм является использование одного элемента с расплывчатым названием
+            <code>&lt;input&gt;</code> для создания разнообразных элементов управления, от флажков до текстовых полей и
+            кнопок. Конкретный вид элемента управления зависит от атрибута <code>type</code> элемента <code>&lt;input&gt;</code>.
+            Если браузеру встречается неизвестный тип элемента <code>&lt;input&gt;</code>, веб-обозреватель
+            рассматривает его как обычное текстовое поле.
+        </p>
+        <p>Рассмотрим форму на примере поля <code>search</code>.</p>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Поле <code>search</code></h3>
+        </div>
+        <div class="panel-body">
+            Тип <code>search</code> применяется для полей поиска. Они обычно предназначены для ввода ключевых слов, по
+            которым потом выполняется какой-либо вид поиска. В любом случае поле поиска выглядит и ведет себя почти
+            точно так же, как и обычное текстовое поле. В некоторых браузерах, например <b>Safari</b>, поле поиска
+            выглядит слегка по-другому и имеет скругленные углы. Кроме этого, когда пользователь начинает вводить данные
+            в поле поиска в браузере <b>Safari</b> или <b>Chrome</b>, с правой стороны поля выводится небольшой значок в
+            виде <kbd>X</kbd>, щелкнув по которому можно очистить поле. За исключением этих незначительных различий,
+            поле поиска является ничем иным, как обычным текстовым полем. Основная разница заключается в семантике.<br />
+            Иными словами, тип данных <code>search</code> используется для того, чтобы сделать ясным название поля для
+            браузеров и вспомогательных программ для пользователей с ограниченными возможностями. Они могут направлять
+            посетителей в требуемое место страницы или предоставлять другие, более интеллектуальные услуги — возможно в
+            будущем.
+        </div>
+        <div class="panel-footer">
+            <pre>&lt;input type="search" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите для поиска" autofocus required&gt;</pre>
+            <p>
+                Разберем использованные <b>HTML 5</b> аттрибуты:
+            </p>
+            <ul>
+                <li><code>type="search"</code> - Указывает на тип поля, в нашем случае <code>search</code></li>
+                <li><code>placeholder=""</code> - Текст, отображаемый пользователю, пока поле не заполнено</li>
+                <li><code>pattern=".{3,}"</code> - Регулярное выражение, для проверки данных</li>
+                <li><code>autofocus</code> - Переключает курсор пользователя по умолчанию на эту форму</li>
+                <li><code>required</code> - Аттрибут означает, что поле обязательное</li>
+            </ul>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<!-- JavaScript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Применяем различные исправления для Internet Explorer -->
+<!--[if lt IE 9]>
+<script src="/js/html5shiv.min.js"></script>
+<script src="/js/respond.min.js"></script>
+<![endif]-->
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

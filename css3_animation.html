@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="HTML5 уроки" />
+    <meta name="author" content="Чувелёва Галина Николаевна" />
+    <title>CSS 3: Анимация</title>
+
+    <!-- CSS стили -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/ie10-viewport-bug-workaround.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Иконка сайта -->
+    <link rel="icon" href="/favicon.ico">
+
+    <style rel="stylesheet">
+        /* Настройки анимации */
+        .glow-text {
+            animation-duration: 1s;
+            animation-name: glow;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 0 red; }
+            to { text-shadow: 0 0 40px blue; }
+        }
+
+        /* Настройки анимации */
+        .loader-block {
+            border: 10px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 10px solid deeppink;
+            border-right: 10px solid mediumvioletred;
+            border-bottom: 10px solid pink;
+            width: 20px;
+            height: 20px;
+            padding: 20px;
+            animation: spin 3s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top"></nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>CSS 3 анимация</h1>
+        <p class="lead">В этом уроке рассмотрим пример анимации с применением CSS 3.</p>
+
+        <p>
+            <b>CSS 3</b> позволяет создавать анимацию, которая может заменить анимированные изображения,
+            <b>Flash</b> анимацию и скрипты <b>JavaScript</b> во многих случаях.<br />
+            Анимация в <b>CSS 3</b> - это эффект, который позволяет элементу плавно изменять один стиль на другой.
+            Вы можете изменять столько стилей, сколько захотите, и столько раз, сколько вам заблагорассудится.<br/>
+            Чтобы создавать анимацию в <b>CSS 3</b>, вы должны изучить правило <code>@keyframes</code>.
+            Правило <code>@keyframes</code> используется для создания анимации. Укажите <b>CSS</b> стиль внутри правила
+            <code>@keyframes</code> и анимация будет воспроизводиться, плавно изменяя текущий стиль на новый.<br/>
+            Слово <kbd>keyframes</kbd> можно перевести с английского как <b>"ключевые кадры"</b>.
+        </p>
+        <p>Рассмотрим несколько примеров.</p>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Пример анимации текста</h3>
+        </div>
+        <div class="panel-body">
+            <h1 class="glow-text" align="center">Анимированный текст</h1>
+        </div>
+        <div class="panel-footer">
+            <p>
+                Код ниже создает светящийся эффект с продолжительностью анимации в 2 секунды,
+                которая бесконечно повторяется.<br />
+                Эффект анимациии достигается изменением цвета от <code>red</code> (красный) до <code>blue</code> (синий)
+                и изменения тени текста от <code>0</code> пикселей до <code>40</code> пикселей.
+            </p>
+<pre>/* Настройки анимации */
+.glow-text {
+    animation-duration: 1s;
+    animation-name: glow;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 0 red; }
+    to { text-shadow: 0 0 40px blue; }
+}</pre>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Пример анимации HTML элемента</h3>
+        </div>
+        <div class="panel-body" align="center">
+            <div class="loader-block" align="center"></div>
+        </div>
+        <div class="panel-footer">
+            <p>
+                Создадим анимированный загрузчик.<br />
+                Этот загрузчик состоит из 4 элементов, это блоки <code>20x20</code> пикселей и они вращаются на
+                <b>360°</b> в течение 3 секунд, исходный код ниже:</p>
+<pre>/* Настройки анимации */
+.loader-block {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid deeppink;
+    border-right: 10px solid mediumvioletred;
+    border-bottom: 10px solid pink;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    animation: spin 3s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}</pre>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<!-- JavaScript -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Применяем различные исправления для Internet Explorer -->
+<!--[if lt IE 9]>
+<script src="/js/html5shiv.min.js"></script>
+<script src="/js/respond.min.js"></script>
+<![endif]-->
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
